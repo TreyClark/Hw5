@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:visibility="gone">
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/primaryLightColor"
+        app:tint="@color/primaryTextColor"
+        app:srcCompat="@drawable/ic_local_pizza_24px" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:contextClickable="true"
+        android:visibility="gone"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/pizzaImage"
+            android:layout_width="179dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            app:srcCompat="@drawable/ic_round_pizza" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/buttonGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="horizontal"
+            app:checkedButton="@+id/buttonCircle"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCircle"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/pizza_option_1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSquare"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pizza_option_2" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="6dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPepperoni"
+                style="@style/ChipTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="false"
+                android:text="@string/pepperoni"
+                app:checkedIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMushrooms"
+                style="@style/ChipTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mushrooms" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipVeggies"
+                style="@style/ChipTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/veggies" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAnchovies"
+                style="@style/ChipTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/anchovies" />
+        </com.google.android.material.chip.ChipGroup>*/
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            style="@style/CardTheme">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ingredients"
+                    style="@style/TitleTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/ingredients"
+                    android:theme="@style/TitleTheme" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxPepperoni"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/pepperoni" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxMushrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/mushrooms" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxVeggies"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/veggies" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAnchovies"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/anchovies" />
+
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp">
+
+                        <RadioButton
+                            android:id="@+id/radioButton6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cheese_option_1" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/cheese_option_2" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cheese_option_3" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            style="@style/CardTheme">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:ems="16"
+                        android:inputType="textPersonName" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone"
+                    android:inputType="phone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userPhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:ems="16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
